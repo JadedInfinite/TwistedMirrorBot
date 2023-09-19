@@ -25,9 +25,8 @@ public class listeners extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(@NotNull MessageReceivedEvent event){
-        if (event.getAuthor().isBot()){
-            return;
-        }
+        if (event.getAuthor().isBot()) return;
+
         MessageChannel channel = event.getChannel();
         channel.sendMessage(event.getMessage().getContentRaw()).queue();
     }
