@@ -14,20 +14,17 @@ public class listeners extends ListenerAdapter {
 
     @Override
    public void onReady(@NotNull ReadyEvent event){
-        JDA jda = event.getJDA();
-        for (Guild guild: jda.getGuilds()){
-            for (TextChannel channel: guild.getTextChannels()){
-                //channel.sendMessage("Vibecheck").queue();
-            }
-            System.out.println(guild.getName());
-        }
+        Guild guild = event.getJDA().getGuildById("");
+        guild.upsertCommand("vibe","checks your vibe (and the bot's)").queue();
     }
 
     @Override
     public void onMessageReceived(@NotNull MessageReceivedEvent event){
         if (event.getAuthor().isBot()) return;
 
-        MessageChannel channel = event.getChannel();
+       /*
+         MessageChannel channel = event.getChannel();
         channel.sendMessage(event.getMessage().getContentRaw()).queue();
+        */
     }
 }
