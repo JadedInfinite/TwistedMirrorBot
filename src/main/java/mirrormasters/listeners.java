@@ -15,7 +15,7 @@ public class listeners extends ListenerAdapter {
     @Override
    public void onReady(@NotNull ReadyEvent event){
         Guild guild = event.getJDA().getGuildById("");
-        guild.upsertCommand("vibe","checks your vibe (and the bot's)").queue();
+        guild.upsertCommand("vibe","checks your Vibe (and the bot's)").queue();
     }
 
     @Override
